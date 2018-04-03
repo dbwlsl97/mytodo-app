@@ -26,7 +26,14 @@ export default class ToDo extends React.Component {
             ]}
           />
         </TouchableOpacity>
-        <Text style={styles.text}>Hello I'm a To Do</Text>
+        <Text
+          style={[
+            styles.text,
+            isCompleted ? styles.completedText : styles.uncompletedText
+          ]}
+        >
+          Hello I'm a To Do
+        </Text>
       </View>
     );
   }
@@ -55,14 +62,21 @@ const styles = StyleSheet.create({
     marginRight: 20
   },
   completedCircle: {
-      borderColor: "#bbb"
+    borderColor: "#bbb"
   },
   uncompletedCircle: {
-      borderColor: "#F23657"
+    borderColor: "#F23657"
   },
   text: {
     fontWeight: "600",
     fontSize: 20,
     marginVertical: 20
-  }
+  },
+  completedText: {
+    color: "#bbb",
+    textDecorationLine: "line-through"
+  },
+  uncompletedText: {
+    color: "#353839"
+  } 
 });
