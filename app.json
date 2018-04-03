@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "mytodo",
-    "description": "This project is really great.",
+    "name": "My To-Do list",
+    "description": "MY To-Do list App made with React Native on nomad academy",
     "slug": "mytodo",
     "privacy": "public",
     "sdkVersion": "26.0.0",
