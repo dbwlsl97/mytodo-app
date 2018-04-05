@@ -7,7 +7,7 @@ import {
   Dimensions,
   TextInput
 } from "react-native";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 const { width, height } = Dimensions.get("window");
 
@@ -17,12 +17,13 @@ export default class ToDo extends React.Component {
     this.state = { isEditing: false, toDoValue: props.text };
   }
   static propTypes = {
-    text: propTypes.string.isRequired,
-    isCompleted: propTypes.bool.isRequired,
-    deleteToDo: propTypes.func.isRequireud,
-    id: propTypes.string.isRequired,
-    uncompleteToDo: propTypes.func.isRequired,
-    completeToDo: propTypes.func.isRequired
+    text: PropTypes.string.isRequired,
+    isCompleted: PropTypes.bool.isRequired,
+    deleteToDo: PropTypes.func.isRequireud,
+    id: PropTypes.string.isRequired,
+    uncompleteToDo: PropTypes.func.isRequired,
+    completeToDo: PropTypes.func.isRequired,
+    updateToDo: PropTypes.func.isRequired
   };
   render() {
     const { isEditing, toDoValue } = this.state;
@@ -100,6 +101,9 @@ export default class ToDo extends React.Component {
     this.setState({ isEditing: true });
   };
   _finishEditing = () => {
+    const { toDoValue } = this.state;
+    const { id, updateToDo } = this.props;
+    updateToDo(id, toDoValue);
     this.setState({
       isEditing: false
     });
