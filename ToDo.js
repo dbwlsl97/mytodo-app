@@ -19,7 +19,7 @@ export default class ToDo extends React.Component {
   static propTypes = {
     text: PropTypes.string.isRequired,
     isCompleted: PropTypes.bool.isRequired,
-    deleteToDo: PropTypes.func.isRequireud,
+    deleteToDo: PropTypes.func.isRequired,
     id: PropTypes.string.isRequired,
     uncompleteToDo: PropTypes.func.isRequired,
     completeToDo: PropTypes.func.isRequired,
@@ -51,6 +51,7 @@ export default class ToDo extends React.Component {
               onChangeText={this._controlInput}
               returnKeyType={"done"}
               onBlur={this._finishEditing}
+              underlineColorAndroid={"transparent"}
             />
           ) : (
             <Text
